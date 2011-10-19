@@ -8,15 +8,15 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])  
       session[:user_id] = user.id  
-      redirect_to :bookmarks, :notice => "Logged in successfully."  
+      redirect_to :bookmarks, :flash => {:success => "Logged in successfully."}
     else  
-      flash.now.alert = "Invalid login or password"  
+      flash.now.error = "Invalid login or password"  
       render "new"  
     end  
   end  
 
   def destroy
     session[:user_id] = nil  
-    redirect_to login_path, :notice => "Logged out sucessfully."  
+    redirect_to login_path, :flash => {:success => "Logged out sucessfully."}
   end
 end

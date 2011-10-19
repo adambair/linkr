@@ -22,7 +22,7 @@
         <% end %>
       </nav>
 
-      <h1><%= link_to "Linkr", logged_in? ? dashboard_path : root_path %></h1>
+      <h1><%= link_to "Linkr", logged_in? ? bookmarks_path : root_path %></h1>
 
       <nav id="main">
         <% if logged_in? -%>
@@ -34,24 +34,15 @@
     </div>
   </header>
 
-  <% if flash[:alert] || flash[:notice] %>
+  <% unless flash.empty? %>
     <div id="flash">
-      <div class="container">
-        <% if flash[:notice] %>
-          <div class="notice">
-            <p><%= flash[:notice] %></p>
-          </div>
-        <% end %>
-
-        <% if flash[:alert] %>
-          <div class="alert">
-            <p><%= flash[:alert] %></p>
-          </div>
-        <% end %>
-      </div>
+      <% flash.each do |key, value|%>
+        <div class="container <%= key %>">
+          <p><%= value %></p>
+        </div>
+      <% end %>
     </div>
   <% end %>
-
 
   <div id="main">
     <div class="container">

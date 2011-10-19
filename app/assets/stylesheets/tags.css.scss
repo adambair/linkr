@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@mixin clearfix {
-  overflow: auto;
-  overflow: -moz-scrollbars-none;
-  // This makes ie6 get layout
-  display: inline-block;
-  // and this puts it back to block
-  }
-
 article {
   .tags {
     float: right;

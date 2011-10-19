@@ -1,6 +1,9 @@
 // http://speakerdeck.com/u/chriseppstein/p/sass-the-future-of-stylesheets-in-rails-31
 
+@import "_colors";
+@import "_utilities";
 @import "*";
+
 @import "bookmarks";
 @import "fonts";
 

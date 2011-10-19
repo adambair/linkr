@@ -8,21 +8,13 @@
 </head>
 <body class="minimal <%= controller.controller_name %> <%= controller.action_name %>">
 
-  <% if flash[:alert] || flash[:notice] %>
+  <% unless flash.empty? %>
     <div id="flash">
-      <div class="container">
-        <% if flash[:notice] %>
-          <div class="notice">
-            <p><%= flash[:notice] %></p>
-          </div>
-        <% end %>
-
-        <% if flash[:alert] %>
-          <div class="alert">
-            <p><%= flash[:alert] %></p>
-          </div>
-        <% end %>
-      </div>
+      <% flash.each do |key, value|%>
+        <div class="container <%= key %>">
+          <p><%= value %></p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 

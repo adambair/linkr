@@ -8,6 +8,11 @@ gem 'redis-objects'
 gem 'will_paginate', '~> 3.0.0'
 gem 'acts-as-taggable-on'
 
+group :development do
+  gem 'pry'
+  gem 'pry-doc'
+end
+
 group :development, :test do
   gem "rspec-rails"
   gem "shoulda-matchers"
