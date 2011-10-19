@@ -15,5 +15,5 @@ Linkr::Application.routes.draw do
     get :bookmarklet, :on => :collection
   end
 
-  root :to => 'pages#index'
+  root :to => 'sessions#new'
 end
