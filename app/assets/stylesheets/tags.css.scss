@@ -14,17 +14,22 @@ article {
   .tags {
     float: right;
     a {
-      background: #720000;
+      // background: #720000;
+      background: #000;
       // background: #783258;
       // background: #4d3339;
       // background: #3f0129;
       // background: #433c2e;
-      color: #f552a3;
-      color: #ddd;
+      // color: #f552a3;
+      // color: #ddd;
+      color: #fff;
       padding-left: 4px;
       padding-right: 4px;
       padding-top: 2px;
       padding-bottom: 3px;
+      &:hover {
+        background: red;
+      }
     }
   }
 }

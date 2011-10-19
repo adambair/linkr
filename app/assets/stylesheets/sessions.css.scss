@@ -10,7 +10,7 @@ section#login, section#signup {
     border: none;
   }
   form {
-    background: #000;
+    background: #eee;
     padding: 20px;
     margin-bottom: 10px;
     label {
@@ -19,7 +19,7 @@ section#login, section#signup {
     }
   }
   label {
-    color: #ddd;
+    // color: #ddd;
   }
   .field input {
     width: 98%;
