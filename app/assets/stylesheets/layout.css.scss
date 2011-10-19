@@ -1,3 +1,4 @@
+
 @mixin gradient($start-color: #f3f3f3, $end-color: #fcfcfc) {
   background: $start-color; /* for non-css3 browsers */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start-color}', endColorstr='#{$end-color}'); /* ie */
@@ -79,7 +80,7 @@ header {
     float: right; }
   nav#main {
     a {
-      padding-right: 10px;
+      margin-right: 10px;
     }
   }
 }
