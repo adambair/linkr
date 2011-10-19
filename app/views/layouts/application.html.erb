@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linkr</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="<%= controller.controller_name %> <%= controller.action_name %>">
+
+  <header>
+    <div class="container">
+      <nav id="profile">
+        <% if logged_in? %>
+          <%= link_to "new bookmark", new_bookmark_path %> |
+          <%= link_to current_user.nickname, user_path(current_user) %> | 
+          <%= link_to "logout", logout_path %> | 
+          <%= link_to "help", help_path %>
+        <% else %>
+          <%= link_to "signup", signup_path %> | 
+          <%= link_to "login", login_path %>
+        <% end %>
+      </nav>
+
+      <h1><%= link_to "Linkr", logged_in? ? dashboard_path : root_path %></h1>
+
+      <nav id="main">
+        <% if logged_in? -%>
+          <%= link_to "Everyone", bookmarks_path %>
+          <%= link_to "Bookmarks", dashboard_path %>
+          <%= link_to "Tags", tags_path %>
+        <% end -%>
+      </nav>
+    </div>
+  </header>
+
+  <% if flash[:alert] || flash[:notice] %>
+    <div id="flash">
+      <div class="container">
+        <% if flash[:notice] %>
+          <div class="notice">
+            <p><%= flash[:notice] %></p>
+          </div>
+        <% end %>
+
+        <% if flash[:alert] %>
+          <div class="alert">
+            <p><%= flash[:alert] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+
+  <div id="main">
+    <div class="container">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>

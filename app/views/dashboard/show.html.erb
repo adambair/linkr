@@ -1,0 +1,12 @@
+<h2>Your Bookmarks</h2>
+
+<section>
+  <% unless @bookmarks.empty? %>
+    <%= render :partial => 'bookmarks/bookmark', :collection => @bookmarks %>
+    <%= will_paginate @bookmarks %>
+    <p class="bookmark_count"><%= pluralize(@bookmarks.count, 'Bookmark') %></p>
+  <% else %>
+    <h4>There are no bookmarks to display. Consider checking out <%= link_to "Help", help_path %> for assitance.</h4>
+  <% end %>
+</section>
+

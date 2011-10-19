@@ -1,0 +1,14 @@
+<h2>Tags</h2>
+
+<section>
+  <article class="taglist">
+    <h3>Your Tags</h3>
+    <p class="tags"><%= @user_tags.collect{|t| link_to "#{t} (#{t.count})", tag_path(t.name)}.join(" ").html_safe %></p>
+  </article>
+
+  <article class="taglist">
+    <h3>All Tags</h3>
+    <p class="tags"><%= @tags.collect{|t| link_to "#{t} (#{t.count})", tag_path(t.name)}.join(" ").html_safe %></p>
+  </article> 
+</section>
+

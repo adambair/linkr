@@ -1,0 +1,11 @@
+<h2><%= pluralize(@bookmarks.count, "Bookmark") %> Tagged with '<%= params[:id] %>'</h2>
+
+<section>
+  <% unless @bookmarks.empty? %>
+    <%= render :partial => 'bookmarks/bookmark', :collection => @bookmarks %>
+    <%= will_paginate @bookmarks %>
+  <% else %>
+    <h4>There are no bookmarks tagged with '<%= params[:id] %>'.</h4>
+  <% end %>
+</section>
+

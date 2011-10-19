@@ -1,0 +1,18 @@
+<article>
+  <h4><%= link_to bookmark.title, bookmark.url, :target => "_blank" %> <span></span>
+    <span class="actions">
+      <% if bookmark.user == current_user -%>
+        <%= link_to 'Edit', edit_bookmark_path(bookmark) %> | 
+        <%= link_to 'Delete', bookmark, confirm: 'Are you sure?', method: :delete %>
+      <% else %>
+        <%= link_to 'Save', save_bookmark_path(bookmark) unless bookmark.user == current_user %>
+      <% end %>
+    </span>
+  </h4>
+  <p class="url"><%= link_to bookmark.url, :target => "_blank" %></p>
+  <p class="notes"><%= bookmark.notes %></p>
+  <p class="tags"><%= bookmark.tag_list.collect{|t| link_to t, tag_path(t)}.join(" ").html_safe %></p>
+  <p class="meta">by <span class="nickname"><%= link_to bookmark.user.nickname, user_path(bookmark.user) %></span> 
+    <span class="date"><%= time_ago_in_words(bookmark.created_at) %> ago</span> 
+  </p>
+</article>

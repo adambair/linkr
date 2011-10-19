@@ -1,0 +1,119 @@
+@mixin gradient($start-color: #f3f3f3, $end-color: #fcfcfc) {
+  background: $start-color; /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start-color}', endColorstr='#{$end-color}'); /* ie */
+  background: -webkit-gradient(linear, left top, left bottom, from($start-color), to($end-color)); /* webkit */
+  background: -moz-linear-gradient(top, $start-color, $end-color); /* ff */
+}
+
+@mixin clearfix {
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  // This makes ie6 get layout
+  display: inline-block;
+  // and this puts it back to block
+}
+
+@mixin rounded-bottom-left($radius: 0.5em) {
+  -webkit-border-radius-bottom-left: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin rounded-bottom-right($radius: 0.5em) {
+  -webkit-border-radius-bottom-right: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin rounded-top-left($radius: 0.5em) {
+  -webkit-border-radius-top-left: $radius;
+  -moz-border-radius-topleft: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin rounded-top-right($radius: 0.5em) {
+  -webkit-border-radius-top-right: $radius;
+  -moz-border-radius-topright: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin rounded-bottom($radius: 0.5em) {
+  @include rounded-bottom-left($radius);
+  @include rounded-bottom-right($radius);
+}
+
+@mixin rounded($radius: 0.5em) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.container {
+  margin: 0 auto;
+  width: 950px;
+}
+
+header {
+  @include clearfix;
+  @include gradient(#333333, #000000);
+  display: block;
+  // background: black;
+  line-height: 45px;
+  h1 {
+    padding-right: 35px;
+    float: left;
+    font-family: Georgia;
+    font-size: 1.4em;
+    font-weight: normal;
+    color: #ddd;
+  }
+  nav#profile {
+    float: right; }
+  nav#main {
+    a {
+      padding-right: 10px;
+    }
+  }
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+#flash .container {
+  @include rounded-bottom;
+  padding: 20px;
+  padding-top: 8px;
+  padding-bottom: 12px;
+  background: #1a1a1a; 
+}
+
+section {
+  padding-bottom: 10px;
+}
+
+body { 
+  // color: #fff; 
+  // background-image: url('/assets/repeater.png');
+
+  background-color: #3c0629;
+  background-image: linear-gradient(0, rgba(255,255,255,.07) 50%, transparent 50%), linear-gradient(0, rgba(255,255,255,.13) 50%, transparent 50%), linear-gradient(0, transparent 50%, rgba(255,255,255,.17) 50%), linear-gradient(0, transparent 50%, rgba(255,255,255,.19) 50%);
+  background-size: 13px, 29px, 37px, 53px;
+
+  // background-color: #6d695c;
+  // background-image: repeating-linear-gradient(-30deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px), repeating-linear-gradient(30deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px), linear-gradient(30deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)), linear-gradient(-30deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+  // background-size: 70px 120px;
+}
+
+#main .container {
+  @include rounded;
+  background: #1a1a1a; 
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  min-height: 300px;
+}

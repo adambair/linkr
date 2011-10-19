@@ -1,0 +1,6 @@
+<h2>Help / Bookmarklet</h2>
+<article>
+<%# AB: Extract this into a helper and refactor request.* %>
+<p>drag this bookmarklet to your bookmark bar: <a href="javascript:window.open('<%= request.protocol + request.host + ':' + request.port.to_s %>/bookmarks/bookmarklet?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'newWindowName','width=775,height=450,scrollbars=no,status=no,titlebar=no,toolbar=no');void(0);">save to linkr</a></p>
+</article>
+

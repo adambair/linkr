@@ -1,0 +1,17 @@
+<section id="login">
+  <h2>Log in</h2>  
+  <%= form_tag sessions_path do %>  
+    <div class="field">  
+      <%= label_tag :login, "Nickname or email address" %>
+      <%= text_field_tag :login, params[:login] %>  
+    </div>  
+    <div class="field">  
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>  
+    </div>  
+    <div class="actions"><%= submit_tag "Login to Linkr" %></div>  
+  <% end %>  
+
+  <p>Not a member? <%= link_to "Sign-up now!", signup_path %> / <%#= link_to "Forget your login information?", new_password_path %></p>
+</section>
+

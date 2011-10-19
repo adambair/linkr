@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: linkr_development
+  username: root
+  password: 
+
+test:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: linkr_test
+  username: root
+  password: 
+
+production:
+  adapter: postgresql
+  host: localhost
+  encoding: utf8
+  database: linkr_production
+  username: root
+  password: 

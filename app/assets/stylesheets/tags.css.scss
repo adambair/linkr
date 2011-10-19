@@ -1,0 +1,39 @@
+// Place all the styles related to the tags controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin clearfix {
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  // This makes ie6 get layout
+  display: inline-block;
+  // and this puts it back to block
+  }
+
+article {
+  .tags {
+    float: right;
+    a {
+      background: #720000;
+      // background: #783258;
+      // background: #4d3339;
+      // background: #3f0129;
+      // background: #433c2e;
+      color: #f552a3;
+      color: #ddd;
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-top: 2px;
+      padding-bottom: 3px;
+    }
+  }
+}
+
+.taglist {
+  @include clearfix;
+  width: 100%;
+  border: none;
+  .tags {
+    float: left;
+  }
+}
