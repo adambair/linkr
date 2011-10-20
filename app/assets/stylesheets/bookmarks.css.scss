@@ -27,17 +27,12 @@ article {
 }
 
 p.url {
-  padding-bottom: 3px;
   a {
     color: #666;
     &:hover {
       color: #fff;
     }
   }
-}
-
-p.notes {
-  padding-bottom: 5px;
 }
 
 .pagination {
@@ -56,7 +51,19 @@ p.notes {
 
 article:hover {
   span.actions {
+    float: right;
     display: inline;
+    a {
+      background: #666;
+      color: #fff;
+      padding-top: 2px;
+      padding-bottom: 3px;
+      padding-right: 4px;
+      padding-left: 4px;
+      &:hover{
+        background: #888;
+      }
+    }
   }
 }
 

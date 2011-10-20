@@ -33,7 +33,7 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmarks.new(params[:bookmark])
 
     if @bookmark.save
-      redirect_to dashboard_url, :success, 'Bookmark was successfully created.'
+      redirect_to dashboard_url, :flash => {:success => 'Bookmark was successfully created.'}
     else
       render action: "new"
     end
@@ -43,7 +43,7 @@ class BookmarksController < ApplicationController
     @bookmark = current_user.bookmarks.find(params[:id])
 
     if @bookmark.update_attributes(params[:bookmark])
-      redirect_to dashboard_url, :success, 'Bookmark was successfully updated.'
+      redirect_to dashboard_url, :flash => {:success => 'Bookmark was successfully updated.'}
     else
       render action: "edit"
     end
